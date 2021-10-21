@@ -10,28 +10,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.telecom.resources.Commonaction;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class AddTariff {
-	static WebDriver driver;
-
+public class AddTariff extends Commonaction {
+      Commonaction common = new Commonaction();
+      
 	@Given("user enter telecom website")
 	public void user_enter_telecom_website() {
-	    WebDriverManager.chromedriver().setup();
-	    driver = new ChromeDriver();
-	    driver.get("http://www.demo.guru99.com/telecom/");
-	    driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	    common.launch("http://www.demo.guru99.com/telecom/");
+		
 	}
-
 	@Given("click add tariff plan")
 	public void click_add_tariff_plan() {
-		driver.findElement(By.xpath("//*[text()='Add Tariff Plan']")).click();
-	   
+		
+	   common.clickTariff(driver.findElement(By.xpath("//*[text()='Add Tariff Plan']")));
 	}
 
 	@When("user enter all Fields using one dim list concept")

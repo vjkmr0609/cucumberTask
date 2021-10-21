@@ -18,7 +18,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class AddCustomer {
-    static WebDriver driver;
+    public static WebDriver driver;
 	@Given("user launches demo telecom websie")
 	public void user_launches_demo_telecom_websie() {
 	    WebDriverManager.chromedriver().setup();

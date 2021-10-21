@@ -1,4 +1,5 @@
- #Author: your.vijayviswa95@your.domain.com
+#Author: your.vijayviswa95@your.domain.com
+@reg
 Feature: Add Customer verification
 Background:
      Given user launches demo telecom websie
@@ -9,13 +10,13 @@ Background:
     And user enter submit button
     Then user customer id generated
     
-   
+   @1dl @reg
     Scenario: Add Customer using 1 dim list concept
      When user enter all the details by one dim list concept
       |vijay|kumar|vijayviswa95@gmail.com|create id|9597666445|
      And user enter submit button
      Then user customer id generated
-   
+    @1dl @reg
     Scenario: Add Customer using 1 dim  map concept
      When user enter all the details by one dim  map concept
      |fname |vijay|
